@@ -1,0 +1,83 @@
+extends:
+    - react-app
+    - react-app/jest
+    - airbnb-typescript
+    - plugin:@typescript-eslint/recommended
+    - plugin:@typescript-eslint/recommended-requiring-type-checking
+    - plugin:unicorn/recommended
+    - plugin:sonarjs/recommended
+    - plugin:optimize-regex/recommended
+    - prettier
+    - plugin:prettier/recommended
+plugins:
+    - '@typescript-eslint'
+    - unicorn
+    - sonarjs
+    - optimize-regex
+    - react
+settings:
+    react:
+        version: 'detect'
+env:
+    browser: true
+    jest/globals: true
+parserOptions:
+    ecmaVersion: 12
+    ecmaFeatures:
+        jsx: true
+    project: './tsconfig.json'
+overrides:
+    - files:
+          - '**/*.stories.*'
+      rules:
+          import/no-default-export: off
+          import/no-anonymous-default-export: error
+    - files:
+          - 'src/stories/**/*.tsx'
+      rules:
+          react/jsx-props-no-spreading: off
+rules:
+    react/prop-types: off
+    react/react-in-jsx-scope: off
+    arrow-body-style: error
+    import/no-extraneous-dependencies: off
+    import/prefer-default-export: off
+    import/no-default-export: error
+    import/no-anonymous-default-export: error
+    '@typescript-eslint/no-unused-vars': off
+    '@typescript-eslint/indent': off
+    no-tabs: warn
+    indent:
+        - warn
+        - 4
+    no-restricted-syntax: off
+    sonarjs/no-duplicate-string:
+        - error
+        - 4
+    react/state-in-constructor: off
+    unicorn/no-null: off
+    react/require-default-props:
+        - warn
+        - ignoreFunctionalComponents: true
+    unicorn/filename-case:
+        - warn
+        - cases:
+              camelCase: true
+              pascalCase: true
+          ignore:
+              - URL
+              - API
+    unicorn/prevent-abbreviations:
+        - error
+        - replacements:
+              props:
+                  properties: false
+    no-plusplus:
+        - error
+        - allowForLoopAfterthoughts: true
+    react/jsx-filename-extension:
+        - warn
+        - extensions:
+              - '.jsx'
+              - '.tsx'
+    sonarjs/prefer-immediate-return: warn

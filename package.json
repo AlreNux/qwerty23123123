@@ -1,0 +1,134 @@
+{
+    "name": "alfred-budget",
+    "version": "0.1.0",
+    "private": true,
+    "repository": "github:Gray-Soft/budget-frontend",
+    "homepage": "/budget",
+    "engines": {
+        "node": ">=14.17.0"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.6.0",
+        "babel-loader": "8.2.2",
+        "nanoid": "^3.1.23",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-hook-form": "^7.11.1",
+        "react-redux": "^7.2.4",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.3",
+        "react-svg": "^14.0.5",
+        "redux": "^4.1.0",
+        "redux-thunk": "^2.3.0",
+        "reseter.css": "^1.2.0",
+        "styled-components": "^5.3.0"
+    },
+    "devDependencies": {
+        "@storybook/addon-actions": "^6.3.4",
+        "@storybook/addon-essentials": "^6.3.4",
+        "@storybook/addon-links": "^6.3.4",
+        "@storybook/node-logger": "^6.3.4",
+        "@storybook/preset-create-react-app": "^3.2.0",
+        "@storybook/react": "^6.3.4",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^11.2.7",
+        "@testing-library/user-event": "^12.8.3",
+        "@types/jest": "^26.0.24",
+        "@types/node": "^14.17.5",
+        "@types/react": "^17.0.14",
+        "@types/react-dom": "^17.0.9",
+        "@types/react-redux": "^7.1.18",
+        "@types/react-router-dom": "^5.1.8",
+        "@types/styled-components": "^5.1.11",
+        "@typescript-eslint/eslint-plugin": "^4.28.3",
+        "@typescript-eslint/parser": "^4.28.3",
+        "cz-conventional-changelog": "3.3.0",
+        "eslint": "^7.30.0",
+        "eslint-config-airbnb-typescript": "^12.3.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-config-react-app": "^6.0.0",
+        "eslint-plugin-flowtype": "^5.8.0",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-jest": "^24.3.6",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-optimize-regex": "^1.2.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "eslint-plugin-sonarjs": "^0.9.1",
+        "eslint-plugin-testing-library": "^4.9.0",
+        "eslint-plugin-unicorn": "^34.0.1",
+        "git-cz": "^4.7.6",
+        "prettier": "^2.3.2",
+        "redux-devtools-extension": "^2.13.9",
+        "source-map-explorer": "^2.5.2",
+        "typescript": "^4.3.5",
+        "vercel": "^23.0.1",
+        "web-vitals": "^2.1.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "build-profile": "npm run build -- --profile",
+        "test": "react-scripts test --watchAll=false",
+        "test-watch": "react-scripts test",
+        "test-coverage": "react-scripts test --watchAll=false --coverage",
+        "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
+        "eject": "react-scripts eject",
+        "lint": "eslint --debug --ext .js,.jsx,.ts,.tsx src/",
+        "lint:write": "eslint --debug --ext .js,.jsx,.ts,.tsx src/ --fix",
+        "prettier": "prettier --write src/**",
+        "analyze": "source-map-explorer 'build/static/js/*.js'",
+        "commit": "git-cz",
+        "storybook-build": "build-storybook -s public",
+        "storybook": "start-storybook -p 9009 -s public"
+    },
+    "peerDependenciesMeta": {
+        "react": {
+            "optional": true
+        }
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "pre-push": "yarn build"
+        }
+    },
+    "lint-staged": {
+        "*.(js|jsx|ts|tsx)": [
+            "yarn lint:write",
+            "yarn prettier"
+        ]
+    },
+    "nyc": {
+        "reporter": [
+            "lcov",
+            "text"
+        ],
+        "tempDirectory": "./coverage"
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx,ts,tsx}",
+            "!<rootDir>/node_modules/",
+            "!src/serviceWorker.ts"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "git-cz"
+        }
+    }
+}

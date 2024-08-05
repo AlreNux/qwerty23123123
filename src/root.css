@@ -1,0 +1,22 @@
+:root {
+    --background-color: #7034fa;
+    --background-color-50: rgba(112, 52, 250, 0.5);
+    --background-color-secondary: #fff;
+    --background-color-not-active: #b8b4cb;
+    --background-color-input: #f4f1fc;
+    --background-color-orange: #ff9068;
+    --text-color: #3a325f;
+    --subtext-color: #b8b4cb;
+    --subtext-color-contrast: #726f80;
+    --border-form-color: #9f9bb591;
+    --error-color: #ff0c38;
+    --disabled-color: #cccccc;
+    --hover-transition: 0.35s;
+    --checkbox-color: var(--border-form-color);
+    --checkbox-color--checked: var(--background-color);
+    --checkbox-check-color: transparent;
+    --checkbox-check-color--checked: var(--background-color);
+    --checkbox-check-small-part: 8px;
+    --checkbox-check-big-part: 16px;
+    --box-shadow: 3px 6px 30px rgba(184, 180, 203, 0.9);
+}

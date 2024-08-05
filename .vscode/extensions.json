@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mgmcdermott.vscode-language-babel",
+    "aaron-bond.better-comments",
+    "coenraads.bracket-pair-colorizer-2",
+    "streetsidesoftware.code-spell-checker",
+    "orta.vscode-jest",
+    "streetsidesoftware.code-spell-checker-russian",
+    "ms-ceintl.vscode-language-pack-ru",
+    "jock.svg",
+    "wayou.vscode-todo-highlight",
+    "jpoissonnier.vscode-styled-components"
+  ]
+}
